@@ -8,7 +8,7 @@ public class StudentService {
     private List<student> students = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
-    // Tambah mahasiswa baru
+  
     public void addStudent() {
         System.out.print("Masukkan NIM : ");
         String nim = scanner.nextLine();
@@ -27,7 +27,7 @@ public class StudentService {
         System.out.println("✅ Data mahasiswa berhasil ditambahkan!\n");
     }
 
-    // Tampilkan seluruh mahasiswa
+ 
     public void listStudents() {
         System.out.println("===== Daftar Mahasiswa =====");
         if (students.isEmpty()) {
@@ -40,7 +40,7 @@ public class StudentService {
         }
     }
 
-    // Hapus mahasiswa berdasarkan NIM
+   
     public void deleteStudent() {
         System.out.print("Masukkan NIM yang akan dihapus: ");
         String nim = scanner.nextLine();

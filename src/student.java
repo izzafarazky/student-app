@@ -3,10 +3,10 @@ import java.time.LocalDate;
 public class student {
     private String nim;
     private String name;
-    private LocalDate dob;     // Date of Birth
-    private String address;    // Address
+    private LocalDate dob;     
+    private String address;   
 
-    // Constructor
+
     public student(String nim, String name, LocalDate dob, String address) {
         this.nim = nim;
         this.name = name;
@@ -14,7 +14,7 @@ public class student {
         this.address = address;
     }
 
-    // Getter
+
     public String getNim() {
         return nim;
     }
@@ -31,7 +31,7 @@ public class student {
         return address;
     }
 
-    // Untuk menampilkan data mahasiswa dalam format rapi
+
     @Override
     public String toString() {
         return String.format("%s - %s | DOB: %s | Address: %s",
