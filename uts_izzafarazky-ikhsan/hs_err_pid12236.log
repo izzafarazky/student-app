@@ -1,0 +1,216 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3535), pid=12236, tid=7520
+#
+# JRE version:  (17.0.4+11) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (17.0.4+11-LTS-179, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dclassworlds.conf=C:\Users\Mahasiswa\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\Mahasiswa\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\Mahasiswa\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\Mahasiswa\Downloads\uts_izzafarazky-ikhsan org.codehaus.plexus.classworlds.launcher.Launcher spring-boot:run
+
+Host: Intel(R) Core(TM) i3-3220 CPU @ 3.30GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+Time: Wed Nov  5 15:43:12 2025 SE Asia Standard Time elapsed time: 0.015616 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000163d8c78480):  JavaThread "Unknown thread" [_thread_in_vm, id=7520, stack(0x0000001a8e800000,0x0000001a8e900000)]
+
+Stack: [0x0000001a8e800000,0x0000001a8e900000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6723da]
+V  [jvm.dll+0x7d1f74]
+V  [jvm.dll+0x7d371e]
+V  [jvm.dll+0x7d3d83]
+V  [jvm.dll+0x242ed5]
+V  [jvm.dll+0x66f2f9]
+V  [jvm.dll+0x663c42]
+V  [jvm.dll+0x30103b]
+V  [jvm.dll+0x3085d6]
+V  [jvm.dll+0x35844e]
+V  [jvm.dll+0x35867f]
+V  [jvm.dll+0x2d8258]
+V  [jvm.dll+0x2d91c4]
+V  [jvm.dll+0x7a3a51]
+V  [jvm.dll+0x3662a1]
+V  [jvm.dll+0x782dcc]
+V  [jvm.dll+0x3e8bff]
+V  [jvm.dll+0x3ea6a1]
+C  [jli.dll+0x527b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17374]
+C  [ntdll.dll+0x4cc91]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff89d1ea858, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000163d8cd3de0 GCTaskThread "GC Thread#0" [stack: 0x0000001a8e900000,0x0000001a8ea00000] [id=2680]
+  0x00000163d8ce4be0 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000001a8ea00000,0x0000001a8eb00000] [id=8020]
+  0x00000163d8ce6da0 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000001a8eb00000,0x0000001a8ec00000] [id=2792]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff89ca38c47]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000163d8c74350] Heap_lock - owner thread: 0x00000163d8c78480
+
+Heap address: 0x0000000080a00000, size: 2038 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000080a00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff89ce1b889]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.008 Loaded shared library C:\Program Files\Java\jdk-17.0.4\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff663020000 - 0x00007ff663030000 	C:\Program Files\Java\jdk-17.0.4\bin\java.exe
+0x00007ff8d5470000 - 0x00007ff8d5668000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff8d41e0000 - 0x00007ff8d42a2000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff8d2df0000 - 0x00007ff8d30e7000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff8d3390000 - 0x00007ff8d3490000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff8c8b60000 - 0x00007ff8c8b78000 	C:\Program Files\Java\jdk-17.0.4\bin\jli.dll
+0x00007ff8c95b0000 - 0x00007ff8c95ca000 	C:\Program Files\Java\jdk-17.0.4\bin\VCRUNTIME140.dll
+0x00007ff8d45f0000 - 0x00007ff8d46a1000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff8d5370000 - 0x00007ff8d540e000 	C:\Windows\System32\msvcrt.dll
+0x00007ff8d40a0000 - 0x00007ff8d413f000 	C:\Windows\System32\sechost.dll
+0x00007ff8d4330000 - 0x00007ff8d4456000 	C:\Windows\System32\RPCRT4.dll
+0x00007ff8d3360000 - 0x00007ff8d3387000 	C:\Windows\System32\bcrypt.dll
+0x00007ff8d4e90000 - 0x00007ff8d502d000 	C:\Windows\System32\USER32.dll
+0x00007ff8d2b00000 - 0x00007ff8d2b22000 	C:\Windows\System32\win32u.dll
+0x00007ff8c9840000 - 0x00007ff8c9ada000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.5915_none_60b4b9d171f9c7c7\COMCTL32.dll
+0x00007ff8d41b0000 - 0x00007ff8d41db000 	C:\Windows\System32\GDI32.dll
+0x00007ff8d2b30000 - 0x00007ff8d2c49000 	C:\Windows\System32\gdi32full.dll
+0x00007ff8d2d00000 - 0x00007ff8d2d9d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ff8cce10000 - 0x00007ff8cce1a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff8d3b30000 - 0x00007ff8d3b5f000 	C:\Windows\System32\IMM32.DLL
+0x00007ff8c9e90000 - 0x00007ff8c9e9c000 	C:\Program Files\Java\jdk-17.0.4\bin\vcruntime140_1.dll
+0x00007ff8c2af0000 - 0x00007ff8c2b7d000 	C:\Program Files\Java\jdk-17.0.4\bin\msvcp140.dll
+0x00007ff89c750000 - 0x00007ff89d312000 	C:\Program Files\Java\jdk-17.0.4\bin\server\jvm.dll
+0x00007ff8d4e20000 - 0x00007ff8d4e28000 	C:\Windows\System32\PSAPI.DLL
+0x00007ff8c9fb0000 - 0x00007ff8c9fd7000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff8ce910000 - 0x00007ff8ce919000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ff8d4140000 - 0x00007ff8d41ab000 	C:\Windows\System32\WS2_32.dll
+0x00007ff8d09a0000 - 0x00007ff8d09b2000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ff8c8b50000 - 0x00007ff8c8b5a000 	C:\Program Files\Java\jdk-17.0.4\bin\jimage.dll
+0x00007ff8c1b20000 - 0x00007ff8c1d21000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ff8b0a10000 - 0x00007ff8b0a44000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ff8d32d0000 - 0x00007ff8d3352000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ff8c8b20000 - 0x00007ff8c8b45000 	C:\Program Files\Java\jdk-17.0.4\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-17.0.4\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.5915_none_60b4b9d171f9c7c7;C:\Program Files\Java\jdk-17.0.4\bin\server
+
+VM Arguments:
+jvm_args: -Dclassworlds.conf=C:\Users\Mahasiswa\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\Mahasiswa\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\Mahasiswa\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\Mahasiswa\Downloads\uts_izzafarazky-ikhsan 
+java_command: org.codehaus.plexus.classworlds.launcher.Launcher spring-boot:run
+java_class_path (initial): C:\Users\Mahasiswa\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\boot\plexus-classworlds-2.9.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2136997888                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2136997888                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Users\Mahasiswa\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\gradle\latest\bin;C:\Users\Mahasiswa\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\OpenLogic\jdk-8.0.422.05-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;%JAVA_HOME%\bin;C:\Program Files\Java\jdk-17.0.4;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\firebird\firebird_2_5\bin\;C:\Program Files\PuTTY\;C:\Program Files\apache-maven-3.9.11\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Users\Mahasiswa\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\Mahasiswa\AppData\Local\Programs\Python\Python313\;C:\Users\Mahasiswa\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\Mahasiswa\AppData\Local\Programs\Python\Python312\;C:\Users\Mahasiswa\AppData\Local\Microsoft\WindowsApps;C:\Users\Mahasiswa\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Mahasiswa\AppData\Local\JetBrains\PyCharm Community Edition 2023.2.1\bin;;C:\Users\Mahasiswa\AppData\Local\Programs\Git\cmd;c:\Users\Mahasiswa\.vscode\extensions\vscjava.vscode-java-debug-0.58.3\bundled\scripts\noConfigScripts
+USERNAME=Mahasiswa
+LANG=en_US.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+OS uptime: 0 days 20:24 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9 microcode 0x21, cx8, cmov, fxsr, ht, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, avx, erms, clmul, vzeroupper, clflush
+
+Memory: 4k page, system-wide physical 8147M (555M free)
+TotalPageFile size 9175M (AvailPageFile size 63M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 51M, peak: 179M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (17.0.4+11-LTS-179) for windows-amd64 JRE (17.0.4+11-LTS-179), built on Jun 28 2022 08:23:05 by "mach5one" with MS VC++ 16.8 / 16.9 (VS2019)
+
+END.

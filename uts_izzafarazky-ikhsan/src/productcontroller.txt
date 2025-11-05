@@ -1,0 +1,43 @@
+package com.jwp.uts.uts_izzafarazky.ikhsan.controller;
+
+import com.jwp.uts.uts_izzafarazky.ikhsan.model.Product;
+import org.springframework.web.bind.annotation.*;
+import java.util.*;
+
+@RestController
+@RequestMapping("/products")
+public class ProductController {
+
+    private List<Product> products = new ArrayList<>();
+    private int nextId = 1;
+
+    @GetMapping
+    public List<Product> getAllProducts() {
+        return products;
+    }
+
+    @GetMapping("/{id}")
+    public Object getProductById(@PathVariable int id) {
+        for (Product p : products) {
+            if (p.getId() == id) {
+                return p;
+            }
+        }
+        return Map.of("message", "Product not found");
+    }
+
+
+    @PostMapping
+    public Object addProduct(@RequestBody Product product) {
+        if (product.getName() == null || product.getName().isEmpty() ||
+            product.getCategory() == null || product.getCategory().isEmpty() ||
+            product.getPrice() <= 0) {
+            return Map.of("message", "All fields must be filled and not null");
+        }
+
+        product.setId(nextId++);
+        products.add(product);
+
+        return Map.of("message", "Product added successfully", "product", product);
+    }
+}
